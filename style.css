@@ -1,0 +1,92 @@
+body {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(to bottom, #ff9a9e 0%, #fecfef 100%);
+  font-family: 'Arial', sans-serif;
+  overflow: hidden;
+}
+
+.container {
+  text-align: center;
+  color: #fff;
+}
+
+.birthday-message {
+  position: relative;
+  z-index: 10;
+}
+
+.birthday-message h1 {
+  font-size: 4em;
+  margin: 0;
+  animation: bounce 2s infinite;
+}
+
+.birthday-message p {
+  font-size: 1.5em;
+  margin: 10px 0 0;
+}
+
+.animation {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.balloons {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.balloon {
+  position: absolute;
+  bottom: -150px;
+  width: 60px;
+  height: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 12px;
+  font-weight: bold;
+  text-shadow: 1px 1px 2px black;
+  background: radial-gradient(circle, rgba(255,255,255,1) 0%, rgba(255,255,255,0) 70%);
+  border-radius: 50%;
+  animation: float infinite;
+}
+
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+      transform: translateY(0);
+  }
+  40% {
+      transform: translateY(-30px);
+  }
+  60% {
+      transform: translateY(-15px);
+  }
+}
+
+@keyframes float {
+  0% {
+      transform: translateY(100vh) translateX(0);
+      opacity: 1;
+  }
+  50% {
+      transform: translateY(-50vh) translateX(100vw);
+      opacity: 0.7;
+  }
+  100% {
+      transform: translateY(-100vh) translateX(0);
+      opacity: 1;
+  }
+}
